@@ -7,6 +7,23 @@
     <title>Document</title>
   </head>
   <body>
+    <fieldset>
+        <legend>Add a new City</legend>
+            <form id="newLocationFooter">
+              <label for="Location">Location Name</label><br>
+              <input type="text" name="Location Name" id="LocationName" placeholder="Amman"><br><br>
+      
+              <label for="MinCustomer">Minimum Customers</label><br>
+              <input type="number" name="Minimum Customers" id="minCustomer" placeholder="1"><br><br>
+      
+              <label for="MaxCustomers">Maximum Customers</label><br>
+              <input type="number" name="Maximum Customers" id="maxCustomer" placeholder="50"><br><br>
+    
+              <label for="AvgCustomers">Average Customers</label><br>
+              <input type="number" name="Average Customers" id="AvgCustomers" placeholder="4.6"><br><br>
+            <button type="submit">Save</button>
+        </form>
+    </fieldset>
     <table id="cookieProfiles"></table>
     <script src="./js/app.js"></script>
   </body>

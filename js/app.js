@@ -1,6 +1,7 @@
 'use strict';
 
 let cookieMaintable = document.getElementById('cookieProfiles');
+let newLocationFooter = document.getElementById('newLocationFooter');
 let customerTime = [
   '6am',
   '7am',
@@ -110,6 +111,21 @@ Lima.render();
 Paris.render();
 Dubai.render();
 
+function formSubmission(event) {
+  event.preventDefault();
+  let newName = (event.target.LocationName.value).tolowerCase();
+  let MinCus = Math.ceil(event.target.minCustomer.value);
+  let MaxCus = Math.ceil(event.target.maxCustomer.value);
+  let newAvg = event.target.AvgCustomers.value;
+
+
+  let newlocation = new SalmonStore(newName, MinCus, MaxCus, newAvg);
+  newlocation.customersPerHour();
+  newlocation.getcookie();
+  newlocation.render();
+}
+newLocationFooter.addEventListener('submit', formSubmission);
+
 function locationhoursTotals(x) {
   let sumLocationTotal = 0;
   for (let i = 0; i < cookiesAllData.length; i++) {
@@ -141,4 +157,5 @@ function cookiesfooter() {
   cookiesfooter.appendChild(cookiesTotaloftheTotals);
   cookiesTotaloftheTotals.textContent = totalofCookiesTotal();
 }
+
 cookiesfooter();
