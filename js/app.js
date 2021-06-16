@@ -113,11 +113,10 @@ Dubai.render();
 
 function formSubmission(event) {
   event.preventDefault();
-  let newName = (event.target.LocationName.value).tolowerCase();
+  let newName = event.target.LocationName.value;
   let MinCus = Math.ceil(event.target.minCustomer.value);
   let MaxCus = Math.ceil(event.target.maxCustomer.value);
   let newAvg = event.target.AvgCustomers.value;
-
 
   let newlocation = new SalmonStore(newName, MinCus, MaxCus, newAvg);
   newlocation.customersPerHour();
